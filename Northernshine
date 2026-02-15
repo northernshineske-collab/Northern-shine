@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Northern Shine – Bilrekond i Yttervik</title>
+  <meta name="description" content="Northern Shine erbjuder invändig rengöring och djup invändig rekond i Yttervik. Våtdammsugning och luktborttagning." />
+  <meta name="theme-color" content="#0b0f14" />
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#101722;
+      --text:#e9eef6;
+      --muted:#a9b4c2;
+      --line:rgba(255,255,255,.10);
+      --shadow: 0 14px 40px rgba(0,0,0,.45);
+      --radius:18px;
+      --max:1100px;
+      --btn:#ffffff;
+      --btnText:#0b0f14;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(1000px 600px at 20% -10%, rgba(255,255,255,.10), transparent 55%),
+                  radial-gradient(900px 500px at 100% 10%, rgba(127,142,163,.18), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,15,20,.70);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:14px 24px; max-width:var(--max); margin:0 auto;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; text-decoration:none;
+      letter-spacing:.2px;
+    }
+    .logo{
+      width:38px; height:38px; border-radius:999px;
+      border:1px solid var(--line);
+      display:grid; place-items:center;
+      box-shadow: var(--shadow);
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.02));
+      font-weight:800;
+    }
+    .brand b{font-size:16px}
+    .brand span{display:block; font-size:12px; color:var(--muted)}
+    .links{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .links a{
+      text-decoration:none; color:var(--muted);
+      padding:8px 10px; border-radius:10px;
+    }
+    .links a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+    .pill{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      border-radius:999px;
+    }
+
+    .hero{
+      padding:56px 0 26px;
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:22px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){ .hero{grid-template-columns:1fr; padding-top:34px} }
+    h1{margin:0 0 10px; font-size:44px; line-height:1.08; letter-spacing:-.6px}
+    @media (max-width: 520px){ h1{font-size:36px} }
+    .lead{color:var(--muted); font-size:16px; margin:0 0 18px}
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px; padding:12px 16px; border-radius:14px;
+      border:1px solid var(--line);
+      text-decoration:none; font-weight:700;
+      background: rgba(255,255,255,.06);
+    }
+    .btn.primary{
+      background: var(--btn); color: var(--btnText);
+      border-color: transparent;
+    }
+    .btn:hover{filter:brightness(1.05)}
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+    }
+    .kpi{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+    .kpi div{
+      background: rgba(0,0,0,.20);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px;
+    }
+    .kpi b{display:block; font-size:14px}
+    .kpi span{color:var(--muted); font-size:12px}
+    section{padding:26px 0}
+    h2{margin:0 0 12px; font-size:22px}
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    @media (max-width: 900px){ .grid2{grid-template-columns:1fr} }
+    .muted{color:var(--muted)}
+    ul{margin:10px 0 0; padding-left:18px}
+    li{margin:6px 0}
+    .priceGrid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    @media (max-width: 900px){ .priceGrid{grid-template-columns:1fr} }
+    .priceCard h3{margin:0 0 8px; font-size:16px}
+    .priceLine{
+      display:flex; justify-content:space-between; gap:16px;
+      padding:10px 0; border-top:1px solid var(--line);
+    }
+    .priceLine:first-of-type{border-top:none}
+    .tag{
+      display:inline-flex; align-items:center;
+      padding:6px 10px; border-radius:999px;
+      border:1px solid var(--line);
+      color:var(--muted);
+      background: rgba(255,255,255,.05);
+      font-size:12px;
+    }
+    .footer{
+      padding:26px 0 46px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .split{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+    .contactBox{
+      display:flex; flex-direction:column; gap:10px;
+      margin-top:12px;
+    }
+    .iconRow{display:flex; gap:10px; flex-wrap:wrap}
+    .iconRow a{display:inline-flex; align-items:center; gap:10px}
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav">
+    <a class="brand" href="#top" aria-label="Northern Shine">
+      <div class="logo">NS</div>
+      <div>
+        <b>Northern Shine</b>
+        <span>Bilrekond • Yttervik</span>
+      </div>
+    </a>
+    <nav class="links" aria-label="Navigering">
+      <a href="#tjanster">Tjänster</a>
+      <a href="#priser">Priser</a>
+      <a class="pill" href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top" class="wrap">
+  <section class="hero">
+    <div class="card">
+      <span class="tag">Invändig rekond • Premiumkänsla</span>
+      <h1>Ren interiör.<br/>Fräsch känsla.<br/>Northern Shine.</h1>
+      <p class="lead">
+        Invändig rengöring och djup invändig rekond i Yttervik.
+        För dig som vill få bort smuts, fläckar och dåliga lukter – och få tillbaka nybilskänslan.
+      </p>
+      <div class="ctaRow">
+        <a class="btn primary" href="tel:+46727040803">Ring 072-704 08 03</a>
+        <a class="btn" href="#priser">Se prislista</a>
+      </div>
+      <div class="ctaRow">
+        <a class="btn" href="https://www.facebook.com/share/185nKVNmbZ/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
+        <a class="btn" href="https://www.instagram.com/northernshines?igsh=Znc4MmV2eHVhZnl5&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <p class="muted" style="margin:12px 0 0; font-size:13px">
+        Skriv gärna bilmodell + vilken tjänst du vill ha så återkommer jag snabbt.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Det du får</h2>
+      <div class="kpi">
+        <div>
+          <b>Våtdammsugning</b>
+          <span>Säten & mattor</span>
+        </div>
+        <div>
+          <b>Luktborttagning</b>
+          <span>Fräsch kupé</span>
+        </div>
+        <div>
+          <b>Detaljfokus</b>
+          <span>Paneler & springor</span>
+        </div>
+        <div>
+          <b>Lokal service</b>
+          <span>Yttervik</span>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:12px; font-size:13px">
+        Pristillägg kan tillkomma vid extremt smutsig bil eller mycket djurhår (se prislista).
+      </p>
+    </div>
+  </section>
+
+  <section id="tjanster">
+    <h2>Tjänster</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3 style="margin:0 0 6px">Enklare invändig rengöring</h3>
+        <p class="muted" style="margin:0 0 10px">
+          Snabbt, snyggt och fräscht.
+        </p>
+        <ul>
+          <li>Dammsugning av hela bilen</li>
+          <li>Avtorkning/rengöring av paneler, dörrsidor och detaljer</li>
+          <li>Kontaktytor och synliga ytor fräschas upp</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 style="margin:0 0 6px">Djup invändig rekond (premium)</h3>
+        <p class="muted" style="margin:0 0 10px">
+          Djupare rengöring med våtdammsugning + luktborttagning.
+        </p>
+        <ul>
+          <li>Grundlig dammsugning</li>
+          <li>Våtdammsugning av säten och mattor</li>
+          <li>Rengöring av paneler, plast och detaljer</li>
+          <li>Rengöring av golv, bagage och svåråtkomliga ytor</li>
+          <li>Tar bort dåliga lukter och ger exklusiv finish</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="priser">
+    <h2>Prislista</h2>
+    <div class="priceGrid">
+      <div class="card priceCard">
+        <h3>Enklare invändig rengöring</h3>
+        <div class="priceLine"><span>Liten bil</span><b>600 kr</b></div>
+        <div class="priceLine"><span>Mellanbil / kombi</span><b>700 kr</b></div>
+        <div class="priceLine"><span>Stor bil / SUV</span><b>800 kr</b></div>
+        <p class="muted" style="margin:10px 0 0; font-size:13px">Inkl: dammsugning + avtorkning/rengöring av ytor.</p>
+      </div>
+
+      <div class="card priceCard">
+        <h3>Djup invändig rekond (premium)</h3>
+        <div class="priceLine"><span>Liten bil</span><b>1 400 kr</b></div>
+        <div class="priceLine"><span>Mellanbil / kombi</span><b>1 600 kr</b></div>
+        <div class="priceLine"><span>Stor bil / SUV</span><b>1 800 kr</b></div>
+        <div class="priceLine"><span>7-sits / extra stor</span><b>från 2 000 kr</b></div>
+        <p class="muted" style="margin:10px 0 0; font-size:13px">Inkl: våtdammsugning + luktborttagning + detaljrengöring.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <div class="split">
+        <div>
+          <b>Tillägg vid behov</b>
+          <div class="muted" style="font-size:13px; margin-top:6px">Extremt smutsig bil: +300–500 kr</div>
+          <div class="muted" style="font-size:13px">Djurhår: +300 kr</div>
+          <div class="muted" style="font-size:13px">Ozonbehandling (max luktborttagning): +500 kr</div>
+        </div>
+        <div>
+          <b>Betalning</b>
+          <div class="muted" style="font-size:13px; margin-top:6px">Swish eller kontant (ändra vid behov)</div>
+          <div class="muted" style="font-size:13px">Kvitto: vid önskemål</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <h2>Kontakt</h2>
+    <div class="card">
+      <p class="muted" style="margin-top:0">
+        Kontakta mig för bokning. Skicka gärna <span class="mono">bilmodell</span> + <span class="mono">tjänst</span> + <span class="mono">önskad dag</span>.
+      </p>
+
+      <div class="contactBox">
+        <div class="iconRow">
+          <a class="btn primary" href="tel:+46727040803">Ring 072-704 08 03</a>
+          <a class="btn" href="https://www.facebook.com/share/185nKVNmbZ/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
+          <a class="btn" href="https://www.instagram.com/northernshines?igsh=Znc4MmV2eHVhZnl5&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <div class="muted" style="font-size:13px">
+          Plats: Yttervik • Tider: enligt överenskommelse
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    <div class="split">
+      <div>© <span id="year"></span> Northern Shine • northernshine.se</div>
+      <div class="muted" style="font-size:12px">Enkel one-page för snabb bokning.</div>
+    </div>
+  </div>
+</main>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
